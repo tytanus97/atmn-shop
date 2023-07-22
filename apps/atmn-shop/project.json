@@ -19,6 +19,11 @@
           "apps/atmn-shop/src/favicon.ico",
           "apps/atmn-shop/src/assets",
           {
+            "glob":"**/*",
+            "input": "libs/navigation/ui/src/assets",
+            "output":"assets"
+          },
+          {
             "glob": "**/*",
             "input": "apps/atmn-shop/src/dummy-data",
             "output": "/"

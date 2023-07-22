@@ -1,9 +1,9 @@
 import { Injectable, inject } from '@angular/core';
-import { User } from '@atmn-shop/navigation/model';
+import { AuthProviderType, User } from '@atmn-shop/navigation/model';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { fromAuth } from './login.selector';
-import { loginActions } from './login.action';
+import { fromAuth } from '../+state/login.selector';
+import { loginActions } from '../+state/login.action';
 
 @Injectable({providedIn: 'root'})
 export class AuthenticationFacade {
@@ -14,8 +14,8 @@ export class AuthenticationFacade {
         return this._store.select(fromAuth.selectUser)
     }
 
-    requestLogin() {
-        this._store.dispatch(loginActions.loginRequested())
+    requestLogin(type: AuthProviderType) {
+        this._store.dispatch(loginActions.loginRequested({authType: type}))
     }
 
     requestLogout() {

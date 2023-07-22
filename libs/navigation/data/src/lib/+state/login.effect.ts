@@ -1,27 +1,27 @@
 import { Injectable, inject } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { loginActions } from './login.action';
-import { Observable, concat, concatMap, debounceTime, filter, from, map, tap } from 'rxjs';
+import {concatMap, debounceTime, from, map } from 'rxjs';
 import {
   Auth,
-  GoogleAuthProvider,
-  signInWithPopup,
   user,
 } from '@angular/fire/auth';
 
 import {User as AuthUser} from '@angular/fire/auth'
+import { AuthProviderAggregator } from '../auth/auth-provider-aggregator';
 
 @Injectable()
 export class LoginEffects {
   private _actions = inject(Actions);
   private _auth = inject(Auth);
+  private readonly _authProviderAggregator = inject(AuthProviderAggregator);
 
   login$ = createEffect(
     () =>
       this._actions.pipe(
         debounceTime(500),
         ofType(loginActions.loginRequested),
-        concatMap(() => signInWithPopup(this._auth, new GoogleAuthProvider()))
+        concatMap((action) => this._authProviderAggregator.signIn(action.authType, this._auth))
       ),
     { dispatch: false }
   );

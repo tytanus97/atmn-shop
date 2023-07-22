@@ -2,7 +2,7 @@ import { Component, Input, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { AuthenticationFacade } from '@atmn-shop/navigation/data';
-import { User } from '@atmn-shop/navigation/model';
+import { AuthProviderType, User } from '@atmn-shop/navigation/model';
 import {MatIconModule} from '@angular/material/icon';
 
 @Component({
@@ -21,7 +21,7 @@ export class LoginPanelComponent {
 
 
   login() {
-    this._authFacade.requestLogin()
+    this._authFacade.requestLogin(AuthProviderType.GOOGLE)
   }
 
   logout() {
