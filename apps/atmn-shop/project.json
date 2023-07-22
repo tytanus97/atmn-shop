@@ -20,6 +20,9 @@
           "apps/atmn-shop/src/assets"
         ],
         "styles": ["apps/atmn-shop/src/styles.scss"],
+        "stylePreprocessorOptions": {
+          "includePaths": ["libs/shared/styles/"]
+        },
         "scripts": []
       },
       "configurations": {

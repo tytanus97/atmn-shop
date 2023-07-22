@@ -14,7 +14,16 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@atmn-shop/navigation/data": ["libs/navigation/data/src/index.ts"],
+      "@atmn-shop/navigation/feature": ["libs/navigation/feature/src/index.ts"],
+      "@atmn-shop/navigation/model": ["libs/navigation/model/src/index.ts"],
+      "@atmn-shop/navigation/ui": ["libs/navigation/ui/src/index.ts"],
+      "@atmn-shop/products/data": ["libs/products/data/src/index.ts"],
+      "@atmn-shop/products/feature": ["libs/products/feature/src/index.ts"],
+      "@atmn-shop/products/model": ["libs/products/model/src/index.ts"],
+      "@atmn-shop/products/ui": ["libs/products/ui/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
