@@ -1,7 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { loginActions } from './login.action';
-import {concatMap, debounceTime, from, map } from 'rxjs';
+import {concatMap, debounceTime, from, map, tap } from 'rxjs';
 import {
   Auth,
   user,
@@ -40,7 +40,8 @@ export class LoginEffects {
 
   logout$ = createEffect(() => this._actions.pipe(
     ofType(loginActions.logoutRequested),
-    concatMap(() => from(this._auth.signOut()))  
+    tap(({callback}) => callback()),
+    concatMap(() =>   from(this._auth.signOut()))
   ), {dispatch: false})
 }
 

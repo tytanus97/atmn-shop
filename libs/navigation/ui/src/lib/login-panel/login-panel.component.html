@@ -1,9 +1,9 @@
-<div>
-    <button mat-raised-button color="primary" *ngIf="user === null" (click)="login()"><b>Sign In</b></button>
-    <div *ngIf="user !== null">
-        <span>{{user.username}}</span>
-        <button mat-mini-fab color="warn" aria-label="Example icon button with a filter list icon" (click)="logout()">
-            <mat-icon>filter_list</mat-icon>
-          </button>
-    </div>
+<div >
+  <button mat-raised-button color="primary" *ngIf="!user" (click)="login()">
+    <b>Sign In</b>
+  </button>
+  <div class="login-panel-container" *ngIf="user">
+    <span>{{ user.username }}</span>
+    <img class="logout-icon" (click)="logout()" src="assets/icons/logout.svg" />
+  </div>
 </div>

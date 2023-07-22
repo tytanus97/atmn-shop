@@ -18,7 +18,7 @@ export class AuthenticationFacade {
         this._store.dispatch(loginActions.loginRequested({authType: type}))
     }
 
-    requestLogout() {
-       this._store.dispatch(loginActions.logoutRequested())
+    requestLogout(callback: () => void) {
+       this._store.dispatch(loginActions.logoutRequested({callback}))
     }
 }

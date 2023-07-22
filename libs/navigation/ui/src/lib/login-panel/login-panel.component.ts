@@ -4,6 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { AuthenticationFacade } from '@atmn-shop/navigation/data';
 import { AuthProviderType, User } from '@atmn-shop/navigation/model';
 import {MatIconModule} from '@angular/material/icon';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'atmn-shop-login-panel',
@@ -14,7 +15,7 @@ import {MatIconModule} from '@angular/material/icon';
   providers: [AuthenticationFacade]
 })
 export class LoginPanelComponent {
-
+  private readonly _router = inject(Router)
   private _authFacade = inject(AuthenticationFacade)
 
   @Input({required: true}) user: User | null = null
@@ -25,6 +26,6 @@ export class LoginPanelComponent {
   }
 
   logout() {
-    this._authFacade.requestLogout()
+    this._authFacade.requestLogout(() => this._router.navigateByUrl('/products'))
   }
 }

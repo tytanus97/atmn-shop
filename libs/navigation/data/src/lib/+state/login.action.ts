@@ -6,6 +6,6 @@ export const loginActions = createActionGroup({
     events: {
         "login requested": props<{authType: AuthProviderType}>(),
         "login user": props<{user: User | null}>(),
-        "logout requested": emptyProps()
+        "logout requested": props<{callback: () => void}>()
     }
 })
