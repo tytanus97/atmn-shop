@@ -1,10 +1,13 @@
 import { Route } from '@angular/router';
 import { ProductListContainerComponent } from './product-list-container/product-list-container.component';
-import { provideProducts } from '@atmn-shop/products/data';
+import { ProductDetailsContainerComponent } from './product-details-container/product-details-container.component';
 
 export const PRODUCT_ROUTES: Route[] = [
     {
-        providers: [provideProducts],
-        path: '', component: ProductListContainerComponent
+        path: '', component: ProductListContainerComponent,
+    },
+    {
+        path:':id', component: ProductDetailsContainerComponent
     }
+
 ]

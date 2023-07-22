@@ -28,6 +28,6 @@ export class LoginPanelComponent {
   }
 
   logout() {
-    this._authFacade.requestLogout(() => this._router.navigateByUrl('products'))
+    this._authFacade.requestLogout(() => this._router.navigateByUrl('/products'))
   }
 }

@@ -1,12 +1,26 @@
+@import "mixins.scss";
+
+a {
+    text-decoration: none;
+    color:black;
+}
+
 .product-wrapper {
     display:grid;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 1fr 3fr .5fr;
 
-    margin: 16px;
+    margin: 24px;
+    
 
     border: 1px solid rgba(0, 0, 0, 0.104);
     border-radius: 15px;
     overflow: hidden;
+    box-shadow: 2px 5px 15px 5px rgba(0, 0, 0, 0.067);
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.029);
+        cursor: pointer;
+    }
 }
 
 .product-image {
@@ -31,4 +45,12 @@
             font-size: .8rem;
         }
     }
+}
+
+.product-price {
+    @include flex-center;
+    justify-content: center;
+    align-items: flex-start;
+    font-family: "Open Sans Bold";
+    padding:1rem;
 }

@@ -1,4 +1,5 @@
 import { Route } from '@angular/router';
+import { provideProducts } from '@atmn-shop/products/data';
 
 export const appRoutes: Route[] = [
   {
@@ -8,6 +9,7 @@ export const appRoutes: Route[] = [
   },
   {
     path: 'products',
+    providers: provideProducts,
     loadChildren: () => import('@atmn-shop/products/feature'),
   },
   {
