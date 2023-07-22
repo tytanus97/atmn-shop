@@ -17,7 +17,12 @@
         "tsConfig": "apps/atmn-shop/tsconfig.app.json",
         "assets": [
           "apps/atmn-shop/src/favicon.ico",
-          "apps/atmn-shop/src/assets"
+          "apps/atmn-shop/src/assets",
+          {
+            "glob": "**/*",
+            "input": "apps/atmn-shop/src/dummy-data",
+            "output": "/"
+          }
         ],
         "styles": ["apps/atmn-shop/src/styles.scss"],
         "stylePreprocessorOptions": {
