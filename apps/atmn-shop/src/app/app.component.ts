@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AppShellComponent } from './app-shell/app-shell.component';
 
 @Component({
@@ -8,10 +8,4 @@ import { AppShellComponent } from './app-shell/app-shell.component';
   template: "<atmn-shop-app-shell/>",
  
 })
-export class AppComponent implements OnInit {
-  ngOnInit(): void {
-    fetch('./dummy-data.json').then(response => response.json()).then(data => data.products).then(console.log)
-  }
-
-
-}
+export class AppComponent {}

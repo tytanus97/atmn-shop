@@ -1,18 +1,20 @@
-import { Component, Input, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { AuthenticationFacade } from '@atmn-shop/navigation/data';
 import { AuthProviderType, User } from '@atmn-shop/navigation/model';
 import {MatIconModule} from '@angular/material/icon';
 import { Router } from '@angular/router';
+import { UserInfoComponent } from '../user-info/user-info.component';
 
 @Component({
   selector: 'atmn-shop-login-panel',
   standalone: true,
-  imports: [CommonModule, MatButtonModule, MatIconModule],
+  imports: [CommonModule, MatButtonModule, MatIconModule,UserInfoComponent],
   templateUrl: './login-panel.component.html',
   styleUrls: ['./login-panel.component.scss'],
-  providers: [AuthenticationFacade]
+  providers: [AuthenticationFacade],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LoginPanelComponent {
   private readonly _router = inject(Router)
@@ -26,6 +28,6 @@ export class LoginPanelComponent {
   }
 
   logout() {
-    this._authFacade.requestLogout(() => this._router.navigateByUrl('/products'))
+    this._authFacade.requestLogout(() => this._router.navigateByUrl('products'))
   }
 }

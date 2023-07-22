@@ -1,0 +1,24 @@
+.user-info {
+    display: grid;
+    grid-template-columns: 42px auto;
+    column-gap: 16px;
+
+    &__info {
+        span {
+            display:block;
+        }
+
+        &--email {
+            font-family: "Open Sans Medium";
+            font-size: .7rem;
+            color:rgba(0, 0, 0, 0.612);
+        }
+    }
+
+    &__avatar {
+        &--image {
+            width:100%;
+            border-radius:50%;
+        }
+    }
+}

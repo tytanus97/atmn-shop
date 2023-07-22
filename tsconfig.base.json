@@ -22,7 +22,9 @@
       "@atmn-shop/products/data": ["libs/products/data/src/index.ts"],
       "@atmn-shop/products/feature": ["libs/products/feature/src/index.ts"],
       "@atmn-shop/products/model": ["libs/products/model/src/index.ts"],
-      "@atmn-shop/products/ui": ["libs/products/ui/src/index.ts"]
+      "@atmn-shop/products/ui": ["libs/products/ui/src/index.ts"],
+      "@atmn-shop/shared/data": ["libs/shared/data/src/index.ts"],
+      "@atmn-shop/shared/models": ["libs/shared/models/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

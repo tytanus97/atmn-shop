@@ -1,12 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
-
+@import "@angular/material/prebuilt-themes/purple-green.css";
 
 *,*:before,*:after {
     padding:0;
     margin:0;
     box-sizing: border-box;
-
     font-family: "Open Sans Bold";
+}
+
+body {
+    font-size:16px;
 }
 
 @font-face {
@@ -20,5 +23,17 @@
     font-style: normal;
     font-weight: 700;
     src: url("/assets/fonts/OpenSans-Bold.ttf") format('woff2');
+}
+
+@font-face {
+    font-family: 'Open Sans Medium';
+    font-style: normal;
+    font-weight: 400;
+    src: url("/assets/fonts/OpenSans-Medium.ttf") format('woff2');
+}
+@font-face {
+    font-family: 'Open Sans Italic';
+    font-style: normal;
+    src: url("/assets/fonts/OpenSans-Italic.ttf") format('woff2');
 }
     
