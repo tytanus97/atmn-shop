@@ -1,0 +1,34 @@
+.product-wrapper {
+    display:grid;
+    grid-template-columns: 1fr 3fr;
+
+    margin: 16px;
+
+    border: 1px solid rgba(0, 0, 0, 0.104);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.product-image {
+    img {
+        object-fit: cover;
+        width:100%;
+        height: 100%;
+    }
+}
+
+.product-info {
+    padding:1rem;
+
+    &__info {
+        display:block;
+
+        &--title {
+            font-family: "Open Sans Bold";
+        }
+
+        &--description {
+            font-size: .8rem;
+        }
+    }
+}

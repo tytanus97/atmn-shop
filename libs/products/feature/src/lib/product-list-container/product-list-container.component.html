@@ -1,1 +1,5 @@
-<p>product-list-container works!</p>
+<div class="product-list-wrapper">
+    <ng-container *ngFor="let product of products$ | async ">
+        <atmn-shop-product-list-single-element [product]="product"/>
+    </ng-container> 
+</div>

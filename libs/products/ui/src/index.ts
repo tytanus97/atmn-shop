@@ -1,1 +1,1 @@
-export * from './lib/products-ui.module';
+export * from './lib/product-list-single-element/product-list-single-element.component'
