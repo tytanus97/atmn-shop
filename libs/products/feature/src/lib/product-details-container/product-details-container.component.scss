@@ -1,13 +1,24 @@
 @import "colors.scss";
 
-.product-details-wrapper {
-    display:grid;
-    grid-template-columns: 600px auto;
-    gap:2rem;
+.product-details {
+    overflow:hidden;
     margin:3rem; 
-
     border: 1px solid $border-light-color;
     border-radius: 15px;
+    display:flex;
+    max-width:1200px;
 
-    overflow:hidden;
+    margin: 3rem auto;
+    &__wrapper {
+        display:flex;
+        flex-direction: row;
+    }
+
+    &__gallery {
+        flex: 1 1 600px;
+    }
+
+    &__info {
+       flex: 2 2 auto;
+    }
 } 

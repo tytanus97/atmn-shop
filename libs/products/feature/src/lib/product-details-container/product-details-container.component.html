@@ -1,4 +1,10 @@
-<div *ngIf="product$ | async as productDetails" class="product-details-wrapper">
-    <atmn-shop-product-details-gallery [images]="productDetails.images"/>
-    <atmn-shop-product-details-info [product]="productDetails"/>
+<div *ngIf="product$ | async as productDetails" class="product-details">
+    <div class="product-details__wrapper">
+        <div class="product-detail__gallery">
+            <atmn-shop-product-details-gallery [images]="productDetails.images"/>
+        </div>
+        <div class="product-detail__info">
+            <atmn-shop-product-details-info [product]="productDetails"/>
+        </div>
+    </div>
 </div>

@@ -15,6 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@atmn-shop/cart/data": ["libs/cart/data/src/index.ts"],
+      "@atmn-shop/cart/feature": ["libs/cart/feature/src/index.ts"],
+      "@atmn-shop/cart/models": ["libs/cart/models/src/index.ts"],
+      "@atmn-shop/cart/ui": ["libs/cart/ui/src/index.ts"],
       "@atmn-shop/navigation/data": ["libs/navigation/data/src/index.ts"],
       "@atmn-shop/navigation/feature": ["libs/navigation/feature/src/index.ts"],
       "@atmn-shop/navigation/model": ["libs/navigation/model/src/index.ts"],
