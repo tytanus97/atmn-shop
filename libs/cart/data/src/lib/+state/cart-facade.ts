@@ -18,7 +18,7 @@ export class CartFacade {
         return this._store.select(fromCart.selectTotal)
     }
 
-    get cartItemCount(): Observable<number> {
+    get cartItemCount$(): Observable<number> {
         return this._store.select(fromCart.selectElementsCount)
     }
 

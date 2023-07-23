@@ -20,7 +20,7 @@
             ? 'Available' + ' (' + product.stock + ')'
             : 'Not available'
             }}</span>
-        <button class="info__action--buy-btn" mat-raised-button color="accent">
+        <button class="info__action--buy-btn" mat-raised-button color="accent" (click)="addToCart.emit(product)">
             Add to cart
         </button>
     </div>

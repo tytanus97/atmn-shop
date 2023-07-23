@@ -4,7 +4,7 @@
             <atmn-shop-product-details-gallery [images]="productDetails.images"/>
         </div>
         <div class="product-detail__info">
-            <atmn-shop-product-details-info [product]="productDetails"/>
+            <atmn-shop-product-details-info [product]="productDetails" (addToCart)="onAddToCart($event)" />
         </div>
     </div>
 </div>
