@@ -2,6 +2,7 @@ import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule, NgFor } from '@angular/common';
 import { ProductsFacade } from '@atmn-shop/products/data';
 import { ProductListSingleElementComponent } from '@atmn-shop/products/ui';
+import { Product } from '@atmn-shop/shared/models';
 
 @Component({
   selector: 'atmn-shop-product-list-container',
@@ -16,6 +17,10 @@ export class ProductListContainerComponent implements OnInit{
   
   ngOnInit(): void {
     this._productsFacade.loadProducts()
+  }
+
+  trackByFn(index: any, product: Product) {
+    return product.id
   }
 
 }

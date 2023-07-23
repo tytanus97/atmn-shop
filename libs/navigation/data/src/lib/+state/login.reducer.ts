@@ -4,10 +4,11 @@ import { loginActions } from './login.action'
 
 
 export interface AuthenticationState {
-    user: User | null 
+    user: User
 }
 
 export const ANNONYMOUS_USER: User = {
+    id: 'annonymous',
     isAnonnymous: true,
 }
 

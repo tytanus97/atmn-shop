@@ -1,5 +1,5 @@
 <div class="product-list-wrapper">
-    <ng-container *ngFor="let product of products$ | async ">
+    <ng-container *ngFor="let product of (products$ | async);trackBy: trackByFn">
         <atmn-shop-product-list-single-element [product]="product"/>
     </ng-container> 
 </div>

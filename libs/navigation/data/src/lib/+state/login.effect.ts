@@ -35,7 +35,8 @@ export class LoginEffects {
                 avatar: user.photoURL || '',
                 email: user.email || '',
                 username: user.displayName || '',
-                isAnonnymous: false
+                isAnonnymous: false,
+                id: user.uid
               }
             : ANNONYMOUS_USER,
         })
