@@ -12,9 +12,11 @@ import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { environment } from '../environment/environment';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    provideAnimations(),
     provideRouter(
       appRoutes,
       withEnabledBlockingInitialNavigation(),

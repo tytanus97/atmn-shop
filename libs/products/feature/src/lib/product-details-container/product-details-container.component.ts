@@ -8,11 +8,12 @@ import {
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductsFacade } from '@atmn-shop/products/data';
+import { ProductDetailsGalleryComponent, ProductDetailsInfoComponent } from '@atmn-shop/products/ui';
 
 @Component({
   selector: 'atmn-shop-product-details-container',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,ProductDetailsGalleryComponent,ProductDetailsInfoComponent],
   templateUrl: './product-details-container.component.html',
   styleUrls: ['./product-details-container.component.scss'],
 })
