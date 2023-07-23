@@ -24,11 +24,13 @@
 
     &__price {
         display:block;
-        font-family: "Open Sans Bold";
-        font-size: 2rem;
         grid-column: 1/3;
         justify-self:flex-end;
 
+        &--actual {
+            font-family: "Open Sans Bold";
+            font-size: 2rem;
+        }
         &--before{
             font-family: "Open Sans Italic";
             text-decoration: line-through;
@@ -39,7 +41,7 @@
 
     &__action {
         display:grid;
-        grid-template-columns: 3fr 1fr;
+        grid-template-columns: 3fr auto;
         &--buy-btn {
             font-family: "Open Sans Bold";
         }
