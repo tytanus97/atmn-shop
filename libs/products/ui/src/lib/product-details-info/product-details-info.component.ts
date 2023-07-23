@@ -1,11 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Product } from '@atmn-shop/shared/models';
+import {MatButtonModule} from '@angular/material/button';
 
 @Component({
   selector: 'atmn-shop-product-details-info',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,MatButtonModule],
   templateUrl: './product-details-info.component.html',
   styleUrls: ['./product-details-info.component.scss'],
 })
-export class ProductDetailsInfoComponent {}
+export class ProductDetailsInfoComponent{
+  @Input() product!: Product
+
+ 
+}

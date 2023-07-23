@@ -1,1 +1,27 @@
-<p>product-details-info works!</p>
+<div class="info">
+    <div class="info__wrapper">
+        <h1 class="info__title">{{ product.title }}</h1>
+        <p class="info__description">{{ product.description }}</p>
+        <p class="info__rating">
+            Rating: <b>{{ product.rating }}/5</b>
+        </p>
+        <p class="info__brand">
+            Brand: <b>{{ product.brand }}</b>
+        </p>
+    </div>
+    <div class="info__action">
+        <div class="info__price">
+            <p class="info__price--before">{{ (product.price / ((100-product.discountPercentage)/100)) | currency }}</p>
+            <p class="info__price--actual">{{ product.price | currency }}</p>
+        </div>
+
+        <span class="info__stock" [ngClass]="{ 'info__stock--not-available': product.stock === 0 }">{{
+            product.stock > 0
+            ? 'Available' + ' (' + product.stock + ')'
+            : 'Not available'
+            }}</span>
+        <button class="info__action--buy-btn" mat-raised-button color="accent">
+            Add to cart
+        </button>
+    </div>
+</div>
