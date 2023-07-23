@@ -1,6 +1,6 @@
 @import 'mixins';
 
-.navigation-container {
+.navigation {
   @include flex-center;
   justify-content: flex-end;
   border-bottom: 1px solid rgba(0, 0, 0, 0.114);
@@ -8,4 +8,8 @@
   height: 100%;
 
   padding:0 16px;
+
+  &__cart {
+    margin-right: 2rem;
+  }
 }

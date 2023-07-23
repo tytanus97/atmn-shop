@@ -1,1 +1,1 @@
-export * from './lib/cart-ui.module';
+export * from './lib/cart-navigation/cart-navigation.component'

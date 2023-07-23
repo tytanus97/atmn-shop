@@ -1,4 +1,4 @@
-
+@use "mixins.scss" as mixins;
 .logout-btn {
     height:50%;
 }
@@ -6,7 +6,7 @@
 .logout-icon {
     height:28px;
     margin-left:16px;
-    cursor: pointer;
+    @include mixins.clickable;
 }
 
 .login-panel-container {

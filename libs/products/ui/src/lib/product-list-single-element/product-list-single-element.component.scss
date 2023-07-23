@@ -1,4 +1,4 @@
-@import "mixins.scss";
+@use "mixins.scss" as mixins;
 
 a {
     text-decoration: none;
@@ -19,7 +19,7 @@ a {
 
     &:hover {
         background-color: rgba(0, 0, 0, 0.029);
-        cursor: pointer;
+        @include mixins.clickable;
     }
 }
 
@@ -48,7 +48,7 @@ a {
 }
 
 .product-price {
-    @include flex-center;
+    @include mixins.flex-center;
     justify-content: center;
     align-items: flex-start;
     font-family: "Open Sans Bold";
