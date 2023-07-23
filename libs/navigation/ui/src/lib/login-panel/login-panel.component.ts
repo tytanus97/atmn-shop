@@ -20,7 +20,7 @@ export class LoginPanelComponent {
   private readonly _router = inject(Router)
   private _authFacade = inject(AuthenticationFacade)
 
-  @Input({required: true}) user: User | null = null
+  @Input({required: true}) user!: User
 
 
   login() {

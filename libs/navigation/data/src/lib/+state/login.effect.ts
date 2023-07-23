@@ -6,6 +6,7 @@ import { Auth, user } from '@angular/fire/auth';
 
 import { User as AuthUser } from '@angular/fire/auth';
 import { AuthProviderAggregator } from '../auth/auth-provider-aggregator';
+import { ANNONYMOUS_USER } from './login.reducer';
 
 @Injectable()
 export class LoginEffects {
@@ -34,8 +35,9 @@ export class LoginEffects {
                 avatar: user.photoURL || '',
                 email: user.email || '',
                 username: user.displayName || '',
+                isAnonnymous: false
               }
-            : null,
+            : ANNONYMOUS_USER,
         })
       )
     )

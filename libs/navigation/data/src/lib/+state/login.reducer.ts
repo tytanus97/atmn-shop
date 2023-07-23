@@ -7,8 +7,12 @@ export interface AuthenticationState {
     user: User | null 
 }
 
+export const ANNONYMOUS_USER: User = {
+    isAnonnymous: true,
+}
+
 const INITIAL_STATE: AuthenticationState = {
-    user: null
+    user: ANNONYMOUS_USER
 }
 
 export const authenticationFeature = createFeature({
@@ -16,6 +20,6 @@ export const authenticationFeature = createFeature({
     reducer: createReducer<AuthenticationState>(
         INITIAL_STATE,
         on(loginActions.loginUser, (state, action) => ({...state, user: action.user})),
-        on(loginActions.logoutRequested, (state) => ({...state, user: null})),
+        on(loginActions.logoutRequested, (state) => ({...state, user: ANNONYMOUS_USER})),
     )},
     )
