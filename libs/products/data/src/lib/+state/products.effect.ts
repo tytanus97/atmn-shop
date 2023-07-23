@@ -14,13 +14,27 @@ export class ProductEffect {
     this._actions.pipe(
       ofType(productsActions.loadProducts),
       exhaustMap(() =>
+        this._apiClient.getProducts().pipe(
+          map((products: Product[]) =>
+            productsActions.loadProductsSuccess({ products })
+          ),
+          catchError((error: any) => of(productsActions.loadProductsFailed()))
+        )
+      )
+    )
+  );
+
+  loadSingleProduct = createEffect(() =>
+    this._actions.pipe(
+      ofType(productsActions.loadProductsSingle),
+      exhaustMap(({ id }) =>
         this._apiClient
-          .getProducts()
+          .getProductById(id)
           .pipe(
-            map((products: Product[]) =>
-              productsActions.loadProductsSuccess({ products })
+            map((product: Product) =>
+              productsActions.loadedSingleProductSuccess({ product })
             ),
-            catchError((error: any) => of(productsActions.loadProductsFailed()))
+            catchError((error: any) => of(productsActions.loadedSingleProductFailed()))
           )
       )
     )

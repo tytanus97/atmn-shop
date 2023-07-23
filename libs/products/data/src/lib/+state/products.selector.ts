@@ -1,7 +1,8 @@
 import { productsFeature } from './products.reducer';
 
-const {selectProducts} = productsFeature
+const {selectProducts, selectProductDetails} = productsFeature
 
 export const fromProducts = {
-    selectProducts
+    selectProducts,
+    selectProductDetails
 }

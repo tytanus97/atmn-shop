@@ -12,9 +12,21 @@ export class ProductsFacade {
 
     get products$(): Observable<Product[]> {
         return this._store.select(fromProducts.selectProducts)
-    }   
+    }
+    
+    get productDetails$(): Observable<Product | null> {
+        return this._store.select(fromProducts.selectProductDetails)
+    }
     
     loadProducts() {
         this._store.dispatch(productsActions.loadProducts())
+    }
+
+    loadSingleProductDetails(id: number) {
+        this._store.dispatch(productsActions.loadProductsSingle({id}))
+    }
+
+    resetSingleProductDetails() {
+        this._store.dispatch(productsActions.resetSingleProductDetails())
     }
 }

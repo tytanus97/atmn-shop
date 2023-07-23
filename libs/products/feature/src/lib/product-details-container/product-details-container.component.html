@@ -1,2 +1,5 @@
-<p>product-details-container works!</p>
-<b>{{id}}</b>
+<div *ngIf="product$ | async as productDetails">
+    <h3>{{productDetails.title}}</h3>
+    <h3>{{productDetails.description}}</h3> 
+    <h3>{{productDetails.brand}}</h3> 
+</div>
