@@ -1,5 +1,5 @@
 <div class="cart-navigation" (click)="onShowCartDetails()">
-    <div class="cart-navigation__cart" [matBadge]="itemCount" matBadgeColor="accent" matBadgePosition="below">
+    <div class="cart-navigation__cart" [matBadge]="itemCount" matBadgeColor="accent" matBadgePosition="below" [matBadgeHidden]="itemCount === 0">
         <img class="cart-navigation__image" src="assets/icons/cart.svg">
     </div>
 </div>
