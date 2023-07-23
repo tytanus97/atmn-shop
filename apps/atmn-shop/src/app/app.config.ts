@@ -13,6 +13,7 @@ import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { environment } from '../environment/environment';
 import { provideAnimations } from '@angular/platform-browser/animations';
+import { provideCart } from '@atmn-shop/cart/data';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -25,6 +26,7 @@ export const appConfig: ApplicationConfig = {
     provideStore(),
     provideStoreDevtools(),
     provideAuthentication,
+    provideCart,
     importProvidersFrom(
       provideFirebaseApp(() => initializeApp(environment.firebase)),
       provideAuth(() => getAuth())

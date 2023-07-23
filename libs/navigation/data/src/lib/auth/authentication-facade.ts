@@ -10,7 +10,7 @@ export class AuthenticationFacade {
    
     private _store: Store = inject(Store)
 
-    get user$(): Observable<User | null> {
+    get user$(): Observable<User> {
         return this._store.select(fromAuth.selectUser)
     }
 

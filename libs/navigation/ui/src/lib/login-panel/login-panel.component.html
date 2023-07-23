@@ -1,9 +1,9 @@
 <div >
-  <button mat-raised-button color="accent" *ngIf="user.isAnonnymous" (click)="login()">
+  <button mat-raised-button color="accent" *ngIf="user.isAnonnymous" (click)="onLogin()">
     <b>Sign In</b>
   </button>
   <div class="login-panel-container" *ngIf="!user.isAnonnymous">
    <atmn-shop-user-info [user]="user"/>
-    <img class="logout-icon" (click)="logout()" src="assets/icons/logout.svg" />
+    <img class="logout-icon" (click)="onLogout()" src="assets/icons/logout.svg" />
   </div>
 </div>

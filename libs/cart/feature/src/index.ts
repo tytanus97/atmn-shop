@@ -1,1 +1,1 @@
-export * from './lib/cart-feature.module';
+export * from './lib/cart-navigation-container/cart-navigation-container.component'

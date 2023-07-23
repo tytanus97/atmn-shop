@@ -1,1 +1,1 @@
-<atmn-shop-login-panel [user]="user$ | async"/>
+<atmn-shop-login-panel [user]="user$ | async" (login)="onLogin($event)" (logout)="onLogout()"/>
