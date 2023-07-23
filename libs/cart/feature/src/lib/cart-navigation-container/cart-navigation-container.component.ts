@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { CartNavigationComponent } from '@atmn-shop/cart/ui';
 
 @Component({
@@ -9,4 +10,11 @@ import { CartNavigationComponent } from '@atmn-shop/cart/ui';
   standalone: true,
   imports: [CommonModule, CartNavigationComponent]
 })
-export class CartNavigationContainerComponent {}
+export class CartNavigationContainerComponent {
+
+  private readonly _router = inject(Router)
+
+  onShowCartDetails() {
+    this._router.navigateByUrl('cart')
+  }
+}

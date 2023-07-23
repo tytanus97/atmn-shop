@@ -10,6 +10,6 @@ import { CartNavigationContainerComponent } from '@atmn-shop/cart/feature';
   imports: [CommonModule,LoginPanelContainerComponent,CartNavigationContainerComponent],
   templateUrl: './navigation-container.component.html',
   styleUrls: ['./navigation-container.component.scss'],
-})
+}) 
 export class NavigationContainerComponent {
 }

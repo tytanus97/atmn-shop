@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import {MatBadgeModule} from '@angular/material/badge';
 
 
@@ -9,4 +9,12 @@ import {MatBadgeModule} from '@angular/material/badge';
   standalone: true,
   imports: [MatBadgeModule]
 })
-export class CartNavigationComponent {}
+export class CartNavigationComponent {
+
+  @Output() showCartDetails = new EventEmitter<void>();
+
+  onShowCartDetails() {
+    this.showCartDetails.emit()
+  }
+
+}

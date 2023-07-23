@@ -13,6 +13,10 @@ export const appRoutes: Route[] = [
     loadChildren: () => import('@atmn-shop/products/feature'),
   },
   {
+    path: 'cart',
+    loadChildren: () => import('@atmn-shop/cart/routes')
+  },
+  {
     path: '**', redirectTo: '', pathMatch: 'full'
   },
 ];
